@@ -1,0 +1,99 @@
+﻿@model IEnumerable<RegistarPreduzecaV11._0.Models.Preduzece>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RegNaziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegAdresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opstina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostanskiBroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaticniBroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PIB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SifraDelatnosti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpisDelatnosti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrojRacuna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WebStranica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pecat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Beleska)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegNaziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegAdresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opstina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostanskiBroj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaticniBroj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PIB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SifraDelatnosti)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpisDelatnosti)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrojRacuna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WebStranica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pecat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Beleska)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<RegistarPreduzecaV11._0.Models.KontaktTelefon>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KontaktOsoba.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OznakaTipa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrojTelefona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lokal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KontaktOsoba.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OznakaTipa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrojTelefona)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lokal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistarPreduzecaV11.0", "RegistarPreduzecaV11.0\RegistarPreduzecaV11.0.csproj", "{56D7073C-EAFA-4447-BEE2-394C3C5BF094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistarPreduzecaV11.0.Tests", "RegistarPreduzecaV11.0.Tests\RegistarPreduzecaV11.0.Tests.csproj", "{92E5F5A0-4078-461A-B5F5-FBFC00A6368D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56D7073C-EAFA-4447-BEE2-394C3C5BF094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D7073C-EAFA-4447-BEE2-394C3C5BF094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56D7073C-EAFA-4447-BEE2-394C3C5BF094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56D7073C-EAFA-4447-BEE2-394C3C5BF094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92E5F5A0-4078-461A-B5F5-FBFC00A6368D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92E5F5A0-4078-461A-B5F5-FBFC00A6368D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92E5F5A0-4078-461A-B5F5-FBFC00A6368D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92E5F5A0-4078-461A-B5F5-FBFC00A6368D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FF147D6-8FD2-450B-8000-959256D1AAE9}
+	EndGlobalSection
+EndGlobal

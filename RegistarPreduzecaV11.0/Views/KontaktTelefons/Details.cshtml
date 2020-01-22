@@ -1,0 +1,50 @@
+﻿@model RegistarPreduzecaV11._0.Models.KontaktTelefon
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KontaktTelefon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KontaktOsoba.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KontaktOsoba.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OznakaTipa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OznakaTipa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrojTelefona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrojTelefona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lokal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lokal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

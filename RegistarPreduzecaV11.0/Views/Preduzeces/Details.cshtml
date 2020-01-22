@@ -1,0 +1,124 @@
+﻿@model RegistarPreduzecaV11._0.viewModel.PreduzeceViewModel
+
+@{
+	ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Preduzece</h4>
+    <hr />
+	<dl class="dl-horizontal">
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Preduzece.RegNaziv)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Preduzece.RegNaziv)
+		</dd>
+		
+		
+			<dt>
+				@Html.DisplayNameFor(model => model.Preduzece.RegAdresa)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Preduzece.RegAdresa)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Preduzece.Opstina)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Preduzece.Opstina)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Preduzece.PostanskiBroj)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Preduzece.PostanskiBroj)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Preduzece.MaticniBroj)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Preduzece.MaticniBroj)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Preduzece.PIB)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Preduzece.PIB)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Preduzece.SifraDelatnosti)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Preduzece.SifraDelatnosti)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Preduzece.OpisDelatnosti)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Preduzece.OpisDelatnosti)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Preduzece.BrojRacuna)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Preduzece.BrojRacuna)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Preduzece.WebStranica)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Preduzece.WebStranica)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Preduzece.Pecat)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Preduzece.Pecat)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Preduzece.Beleska)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Preduzece.Beleska)
+			</dd>
+			<p> Kontakt Osobe: </p>
+			@foreach (var osoba in Model.KontaktOsoba)
+		{
+
+
+			Html.RenderPartial("KontaktOsobaPartialView", osoba);
+
+		}
+		</dl>
+</div>
+	
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>
