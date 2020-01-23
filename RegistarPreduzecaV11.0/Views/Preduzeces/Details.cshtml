@@ -7,8 +7,9 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Preduzece</h4>
-    <hr />
+	<h4>Preduzece</h4>
+	<hr />
+    @Html.ActionLink("pdf", "Convert", new { urlId = Model.Preduzece.Id})
 	<dl class="dl-horizontal">
 
 		<dt>
@@ -119,6 +120,6 @@
 </div>
 	
 <p>
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")*@
+	@*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+	@Html.ActionLink("Back to List", "Index")*@
 </p>
