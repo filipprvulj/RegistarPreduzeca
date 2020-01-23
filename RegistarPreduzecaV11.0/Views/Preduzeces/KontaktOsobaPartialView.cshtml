@@ -2,8 +2,7 @@
 
 <div>
     @*<h4>KontaktOsoba</h4>*@
-    <hr />
-	<dl class="dl-horizontal">
+    
 		@*<dt>
 			@Html.DisplayNameFor(model => model.Preduzece.RegNaziv)
 		</dt>
@@ -11,43 +10,38 @@
 		<dd>
 			@Html.DisplayFor(model => model.Preduzece.RegNaziv)
 		</dd>*@
-
-		<dt>
-			@Html.DisplayNameFor(model => model.Ime)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.Ime)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.Prezime)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.Prezime)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.RadnoMesto)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.RadnoMesto)
-		</dd>
-		@foreach (var kontaktTelefon in Model.KontaktTelefoni)
-		{
-
-
-			Html.RenderPartial("KontaktTelefonPartialView", kontaktTelefon);
-
-		}
-		@foreach (var email in Model.Emailovi)
-		{
+        <ul type="none">
+            <li>
+                <b>@Html.DisplayNameFor(model => model.Ime): </b>
+                @Html.DisplayFor(model => model.Ime)
+            </li>
+            <li>
+                <b>@Html.DisplayNameFor(model => model.Prezime): </b>
+                @Html.DisplayFor(model => model.Prezime)
+            </li>
+            <li>
+                <b>@Html.DisplayNameFor(model => model.RadnoMesto): </b>
+                @Html.DisplayFor(model => model.RadnoMesto)
+            </li>
+            <li>
+                <b>Kontakt telefon</b>
+                @foreach (var kontaktTelefon in Model.KontaktTelefoni)
+                {
+                    Html.RenderPartial("KontaktTelefonPartialView", kontaktTelefon);
+                    <br />
+                }
+            </li>
+            <li>
+                <b>E-mail</b>
+                @foreach (var email in Model.Emailovi)
+                {
+                    Html.RenderPartial("EmailPartialView", email);
+                    <br />
+                }
+            </li>
+        </ul>	
+		
 
 
-			Html.RenderPartial("EmailPartialView", email);
-
-		}
-	</dl>
+	
 </div>
