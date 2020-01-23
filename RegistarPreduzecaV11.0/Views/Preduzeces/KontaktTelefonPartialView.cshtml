@@ -2,8 +2,7 @@
 
 <div>
     @*<h4>KontaktTelefon</h4>*@
-    <hr />
-    <dl class="dl-horizontal">
+    
         @*<dt>
             @Html.DisplayNameFor(model => model.KontaktOsoba.Ime)
         </dt>*@
@@ -12,30 +11,19 @@
             @Html.DisplayFor(model => model.KontaktOsoba.Ime)
         </dd>*@
 
-        <dt>
-            @Html.DisplayNameFor(model => model.OznakaTipa)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OznakaTipa)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BrojTelefona)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BrojTelefona)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Lokal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Lokal)
-        </dd>
-
-    </dl>
+       <ul type="none">
+           <li>
+               <b>@Html.DisplayNameFor(model => model.OznakaTipa): </b>
+               @Html.DisplayFor(model => model.OznakaTipa)
+           </li>
+           <li>
+               <b>@Html.DisplayNameFor(model => model.BrojTelefona): </b>
+               @Html.DisplayFor(model => model.BrojTelefona)
+           </li>
+           <li>
+               <b>@Html.DisplayNameFor(model => model.Lokal): </b>
+               @Html.DisplayFor(model => model.Lokal)
+           </li>
+       </ul>
 </div>
 

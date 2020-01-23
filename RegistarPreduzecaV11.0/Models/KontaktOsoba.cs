@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace RegistarPreduzecaV11._0.Models
 {
@@ -13,6 +14,7 @@ namespace RegistarPreduzecaV11._0.Models
 
 		public string Prezime { get; set; }
 
+		[Display(Name = "Radno mesto")]
 		public string RadnoMesto { get; set; }
 
 		public ICollection<KontaktTelefon> KontaktTelefoni { get; set; }

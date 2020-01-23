@@ -2,8 +2,7 @@
 
 <div>
     @*<h4>Email</h4>*@
-    <hr />
-    <dl class="dl-horizontal">
+ 
         @*<dt>
             @Html.DisplayNameFor(model => model.KontaktOsoba.Ime)
         </dt>
@@ -12,22 +11,15 @@
             @Html.DisplayFor(model => model.KontaktOsoba.Ime)
         </dd>*@
 
-        <dt>
-            @Html.DisplayNameFor(model => model.OznakaTipa)
-        </dt>
-
-        <dd>
+    <ul type="none">
+        <li>
+            <b>@Html.DisplayNameFor(model => model.OznakaTipa): </b>
             @Html.DisplayFor(model => model.OznakaTipa)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailAdresa)
-        </dt>
-
-        <dd>
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(model => model.EmailAdresa): </b>
             @Html.DisplayFor(model => model.EmailAdresa)
-        </dd>
-
-    </dl>
+        </li>
+    </ul>
 </div>
 

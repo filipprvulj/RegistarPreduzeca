@@ -22,10 +22,12 @@ namespace RegistarPreduzecaV11._0.Models
 		[Display(Name = "Poštaniski broj")]
 		public int PostanskiBroj { get; set; }
 
+		[Display(Name = "Matični broj")]
 		public string MaticniBroj { get; set; }
 
 		public string PIB { get; set; }
 
+		[Display(Name = "Šifra delatnosti")]
 		public int SifraDelatnosti { get; set; }
 
 		[Display(Name = "Opis delatnosti")]
@@ -39,6 +41,7 @@ namespace RegistarPreduzecaV11._0.Models
 
 		public ICollection<KontaktOsoba> KontaktOsobe { get; set; }
 
+		[Display(Name = "Pečat")]
 		public string Pecat { get; set; }
 
 		[Display(Name = "Beleška")]
