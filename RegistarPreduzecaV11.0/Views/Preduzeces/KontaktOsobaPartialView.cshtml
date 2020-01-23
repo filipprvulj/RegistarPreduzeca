@@ -10,38 +10,57 @@
 		<dd>
 			@Html.DisplayFor(model => model.Preduzece.RegNaziv)
 		</dd>*@
-        <ul type="none">
-            <li>
-                <b>@Html.DisplayNameFor(model => model.Ime): </b>
-                @Html.DisplayFor(model => model.Ime)
-            </li>
-            <li>
-                <b>@Html.DisplayNameFor(model => model.Prezime): </b>
-                @Html.DisplayFor(model => model.Prezime)
-            </li>
-            <li>
-                <b>@Html.DisplayNameFor(model => model.RadnoMesto): </b>
-                @Html.DisplayFor(model => model.RadnoMesto)
-            </li>
-            <li>
-                <b>Kontakt telefon</b>
-                @foreach (var kontaktTelefon in Model.KontaktTelefoni)
-                {
-                    Html.RenderPartial("KontaktTelefonPartialView", kontaktTelefon);
+        
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br />
+                        <b>Osnovni podaci</b>
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Ime)</th>
+                                <th>@Html.DisplayNameFor(model => model.Prezime)</th>
+                                <th>@Html.DisplayNameFor(model => model.RadnoMesto)</th>
+                            </tr>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.Ime)</td>
+                                <td>@Html.DisplayFor(model => model.Prezime)</td>
+                                <td>@Html.DisplayFor(model => model.RadnoMesto)</td>
+                            </tr>
+                            
+                        </table>
                     <br />
-                }
-            </li>
-            <li>
-                <b>E-mail</b>
-                @foreach (var email in Model.Emailovi)
-                {
-                    Html.RenderPartial("EmailPartialView", email);
-                    <br />
-                }
-            </li>
-        </ul>	
-		
-
-
+                    </div>
+                    <div class="col-md-12">
+                        <b>Kontakt telefon</b>
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>@Html.DisplayNameFor(tip=>Model.KontaktTelefoni.First().OznakaTipa)</th>
+                                <th>@Html.DisplayNameFor(broj=>Model.KontaktTelefoni.First().BrojTelefona)</th>
+                                <th>@Html.DisplayNameFor(lokal=>Model.KontaktTelefoni.First().Lokal)</th>
+                            </tr>
+                            @foreach (var kontaktTelefon in Model.KontaktTelefoni)
+                            {
+                                <tr>@{Html.RenderPartial("KontaktTelefonPartialView", kontaktTelefon);}</tr>
+                            }
+                        </table>
+                        <br />
+                    </div>
+                    <div class="col-md-12">
+                        <b>E-mail</b>
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>@Html.DisplayNameFor(tip=>Model.Emailovi.First().OznakaTipa)</th>
+                                <th>@Html.DisplayNameFor(broj=>Model.Emailovi.First().EmailAdresa)</th>
+                            </tr>
+                            @foreach (var email in Model.Emailovi)
+                            {
+                               <tr>@{Html.RenderPartial("EmailPartialView", email);}</tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+  
 	
 </div>

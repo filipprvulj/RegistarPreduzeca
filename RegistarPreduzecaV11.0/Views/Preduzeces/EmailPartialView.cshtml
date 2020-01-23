@@ -1,6 +1,6 @@
 ﻿@model RegistarPreduzecaV11._0.Models.Email
 
-<div>
+@*<div>*@
     @*<h4>Email</h4>*@
  
         @*<dt>
@@ -11,15 +11,15 @@
             @Html.DisplayFor(model => model.KontaktOsoba.Ime)
         </dd>*@
 
-    <ul type="none">
+    @*<ul type="none">
         <li>
-            <b>@Html.DisplayNameFor(model => model.OznakaTipa): </b>
-            @Html.DisplayFor(model => model.OznakaTipa)
-        </li>
-        <li>
-            <b>@Html.DisplayNameFor(model => model.EmailAdresa): </b>
-            @Html.DisplayFor(model => model.EmailAdresa)
-        </li>
-    </ul>
-</div>
+            <b>@Html.DisplayNameFor(model => model.OznakaTipa): </b>*@
+            <td>@Html.DisplayFor(model => model.OznakaTipa)</td>
+        @*</li>
+        <li>*@
+            @*<b>@Html.DisplayNameFor(model => model.EmailAdresa): </b>*@
+            <td>@Html.DisplayFor(model => model.EmailAdresa)</td>
+        @*</li>
+    </ul>*@
+@*</div>*@
 

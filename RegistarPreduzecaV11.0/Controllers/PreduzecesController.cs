@@ -148,7 +148,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 			return RedirectToAction("Index");
 		}
 
-		public ActionResult Convert(int urlId)
+		public ActionResult Convert(int id)
 		{
 			//PdfConverter pdfConverter = new PdfConverter();
 			//string url = collection["TxtUrl"];
@@ -158,7 +158,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 			//fileResult.FileDownloadName = "RenderedPage.pdf";
 
 			//return fileResult;
-			var fullUrl = this.Url.Action("Details", "Preduzeces", new { id = urlId}, this.Request.Url.Scheme);
+			var fullUrl = this.Url.Action("Details", "Preduzeces", new { id }, this.Request.Url.Scheme);
 
 			var converter = new HtmlToPdf();
 			var doc = converter.ConvertUrl(fullUrl);
