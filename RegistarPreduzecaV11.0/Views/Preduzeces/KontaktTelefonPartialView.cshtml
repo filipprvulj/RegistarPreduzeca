@@ -1,6 +1,6 @@
 ﻿@model RegistarPreduzecaV11._0.Models.KontaktTelefon
 
-<div>
+@*<div>*@
     @*<h4>KontaktTelefon</h4>*@
     
         @*<dt>
@@ -11,19 +11,26 @@
             @Html.DisplayFor(model => model.KontaktOsoba.Ime)
         </dd>*@
 
-       <ul type="none">
-           <li>
-               <b>@Html.DisplayNameFor(model => model.OznakaTipa): </b>
-               @Html.DisplayFor(model => model.OznakaTipa)
-           </li>
-           <li>
-               <b>@Html.DisplayNameFor(model => model.BrojTelefona): </b>
-               @Html.DisplayFor(model => model.BrojTelefona)
-           </li>
-           <li>
-               <b>@Html.DisplayNameFor(model => model.Lokal): </b>
-               @Html.DisplayFor(model => model.Lokal)
-           </li>
-       </ul>
-</div>
+       @*<table class="table">*@
+           @*<tr>
+               <th>@Html.DisplayNameFor(model => model.OznakaTipa):</th>
+               <th>@Html.DisplayNameFor(model => model.BrojTelefona):</th>
+               <th>@Html.DisplayNameFor(model => model.Lokal):</th>
+           </tr>*@
+           @*<tr>*@
+               <td>@Html.DisplayFor(model => model.OznakaTipa)</td>
+               <td>@Html.DisplayFor(model => model.BrojTelefona)</td>
+               <td>@Html.DisplayFor(model => model.Lokal)</td>
+           @*</tr>*@
+       @*</table>*@
+               
+               
+        
+               
+               
+        
+                
+               
+           
+@*</div>*@
 
