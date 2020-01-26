@@ -10,6 +10,7 @@ using RegistarPreduzecaV11._0.Models;
 
 namespace RegistarPreduzecaV11._0.Controllers
 {
+    [Authorize(Roles = RoleName.SaPravomUnosaIliAdministracije)]
     public class KontaktTelefonsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -95,6 +96,7 @@ namespace RegistarPreduzecaV11._0.Controllers
         }
 
         // GET: KontaktTelefons/Delete/5
+        [Authorize(Roles = RoleName.SaPravomAdministracije)]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -112,6 +114,7 @@ namespace RegistarPreduzecaV11._0.Controllers
         // POST: KontaktTelefons/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.SaPravomAdministracije)]
         public ActionResult DeleteConfirmed(int id)
         {
             KontaktTelefon kontaktTelefon = db.KontaktTelefons.Find(id);
