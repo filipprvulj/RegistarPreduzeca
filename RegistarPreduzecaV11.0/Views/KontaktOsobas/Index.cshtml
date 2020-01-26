@@ -4,12 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Spisak kontakt osoba</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nova osoba", "Create", null, new { @class="btn btn-default" })
 </p>
-<table class="table">
+<table class="table table-hover table-condensed table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Preduzece.RegNaziv)
@@ -23,6 +23,11 @@
         <th>
             @Html.DisplayNameFor(model => model.RadnoMesto)
         </th>
+        @if (User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomAdministracije))
+        {
+            <th></th>
+        }
+        <th></th>
         <th></th>
     </tr>
 
@@ -41,10 +46,17 @@
             @Html.DisplayFor(modelItem => item.RadnoMesto)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Izmeni", "Edit", new { id=item.Id }, new { @class="text-success"}) 
         </td>
+        <td>
+            @Html.ActionLink("Detalji", "Details", new { id=item.Id }, new { @class="text-info"}) 
+        </td>
+        @if (User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomAdministracije))
+        {
+            <td>
+                @Html.ActionLink("Obriši", "Delete", new { id=item.Id }, new { @class="text-danger"})
+            </td>
+        }
     </tr>
 }
 

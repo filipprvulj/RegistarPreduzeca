@@ -40,7 +40,11 @@
         <th>
             @Html.DisplayNameFor(model => model.Beleska)
         </th>
-        <th></th>
+        @if (User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomAdministracije)
+            || User.Identity.IsAuthenticated)
+        {
+            <th></th>
+        }
         @if (User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomAdministracije)
             || User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomUnosa))
         {
