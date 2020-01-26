@@ -7,8 +7,10 @@ namespace RegistarPreduzecaV11._0.Models
 {
     public static class RoleName
     {
+        public const string SaPravomPregleda = "SaPravomPregleda";
         public const string SaPravomUnosa = "SaPravomUnosa";
         public const string SaPravomAdministracije = "SaPravomAdministracije";
+
         public const string SaPravomUnosaIliAdministracije = SaPravomAdministracije + ", " + SaPravomUnosa;
     }
 }

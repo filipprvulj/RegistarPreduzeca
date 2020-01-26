@@ -32,6 +32,10 @@
                         <li>@Html.ActionLink("Mejlovi", "Index", "Emails")</li>
                         <li>@Html.ActionLink("Telefon", "Index", "KontaktTelefons")</li>
                     }
+                    @if (User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomAdministracije))
+                    {
+                        <li>@Html.ActionLink("Korisnici", "Index", "Korisnici")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

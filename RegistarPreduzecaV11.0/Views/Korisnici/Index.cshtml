@@ -1,0 +1,52 @@
+﻿@model RegistarPreduzecaV11._0.viewModel.GrupaKorisnikaViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Spisak korisnika</h2>
+<hr />
+<h4>Admini</h4>
+<table class="table table-condensed table-hover table-striped">
+    <tr>
+        <th>Korisnik</th>
+        <th>Uloga</th>
+    </tr>
+    @foreach(var korisnik in Model.Admini)
+    {
+        <tr>
+            <td>@korisnik.Username</td>
+            <td>@korisnik.Role</td>
+        </tr>
+    }
+</table>
+<hr />
+<h4>Moderatori</h4>
+<table class="table table-condensed table-hover table-striped">
+    <tr>
+        <th>Korisnik</th>
+        <th>Uloga</th>
+    </tr>
+    @foreach(var korisnik in Model.Moderatori)
+    {
+        <tr>
+            <td>@korisnik.Username</td>
+            <td>@korisnik.Role</td>
+        </tr>
+    }
+</table>
+<hr />
+<h4>Korisnici</h4>
+<table class="table table-condensed table-hover table-striped">
+    <tr>
+        <th>Korisnik</th>
+        <th>Uloga</th>
+    </tr>
+    @foreach(var korisnik in Model.Korisnici)
+    {
+        <tr>
+            <td>@korisnik.Username</td>
+            <td>@korisnik.Role</td>
+        </tr>
+    }
+</table>
