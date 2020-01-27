@@ -1,0 +1,33 @@
+﻿@model RegistarPreduzecaV11._0.viewModel.KorisnikIUlogeViewModel
+@{
+    ViewBag.Title = "ChangeRolesForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Promeni ovlašćenje</h2>
+
+@using (Html.BeginForm("ChangeRole", "Korisnici"))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(k => k.Korisnik.UserName)
+        @Html.TextBoxFor(k => k.Korisnik.UserName, new { @class="form-control", @readonly="true"})
+    </div>
+    <div class="form-group">
+        <label>Uloge</label>
+        <select name="role" class="form-control">
+            <option></option>
+            @foreach (var uloga in Model.Uloge)
+            {
+                <option value="@uloga.Id">@uloga.Name</option>
+            }
+        </select>
+    </div>
+    @*@Html.HiddenFor(id=>id.UlogaId)*@
+    <button class="btn btn-default" type="submit">Promeni</button>
+
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

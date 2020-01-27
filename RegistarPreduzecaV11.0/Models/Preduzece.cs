@@ -10,10 +10,10 @@ namespace RegistarPreduzecaV11._0.Models
 	{
 		public int Id { get; set; }
 
-		[Display(Name = "Registrovani naziv")]
+		[Display(Name = "Registrovani naziv preduzeća")]
 		public string RegNaziv { get; set; }
 
-		[Display(Name = "Registrovana adresa")]
+		[Display(Name = "Registrovana adresa preduzeća")]
 		public string RegAdresa { get; set; }
 
 		[Display(Name = "Opština")]

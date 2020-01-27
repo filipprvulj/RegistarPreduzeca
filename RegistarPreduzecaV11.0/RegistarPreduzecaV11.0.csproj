@@ -176,6 +176,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KontaktOsobasController.cs" />
     <Compile Include="Controllers\KontaktTelefonsController.cs" />
+    <Compile Include="Controllers\KorisniciController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PreduzecesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -189,6 +190,10 @@
     <Compile Include="Migrations\202001211652397_SecondMigration.Designer.cs">
       <DependentUpon>202001211652397_SecondMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001260030303_SeedUsers.cs" />
+    <Compile Include="Migrations\202001260030303_SeedUsers.designer.cs">
+      <DependentUpon>202001260030303_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Email.cs" />
@@ -197,8 +202,13 @@
     <Compile Include="Models\KontaktTelefon.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Preduzece.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="viewModel\AdminCreateUserViewModel.cs" />
+    <Compile Include="viewModel\GrupaKorisnikaViewModel.cs" />
+    <Compile Include="viewModel\KorisnikIUlogeViewModel.cs" />
+    <Compile Include="viewModel\KorisnikViewModel.cs" />
     <Compile Include="viewModel\PreduzeceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -280,6 +290,10 @@
     <Content Include="Views\Preduzeces\KontaktOsobaPartialView.cshtml" />
     <Content Include="Views\Preduzeces\KontaktTelefonPartialView.cshtml" />
     <Content Include="Views\Preduzeces\EmailPartialView.cshtml" />
+    <Content Include="Views\Korisnici\Index.cshtml" />
+    <Content Include="Views\Korisnici\ChangeRolesForm.cshtml" />
+    <Content Include="Views\Korisnici\ResetPassword.cshtml" />
+    <Content Include="Views\Korisnici\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -303,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001211652397_SecondMigration.resx">
       <DependentUpon>202001211652397_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001260030303_SeedUsers.resx">
+      <DependentUpon>202001260030303_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
