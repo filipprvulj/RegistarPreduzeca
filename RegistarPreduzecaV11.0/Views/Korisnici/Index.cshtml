@@ -30,6 +30,7 @@
         <th>Uloga</th>
         <th></th>
         <th></th>
+        <th></th>
     </tr>
     @foreach(var korisnik in Model.Moderatori)
     {
@@ -37,6 +38,7 @@
             <td>@korisnik.Username</td>
             <td>@korisnik.Role</td>
             <td>@Html.ActionLink("Promeni ovlašćenja", "ChangeRoles", new { username = korisnik.Username }, new { @class = "text-info" })</td>
+            <td>@Html.ActionLink("Resetuj password","ResetPassword", new { user = korisnik })</td>
             <td>
                 @Html.ActionLink("Obriši", "Delete", new { userName = korisnik.Username }, new { @class = "text-danger" })
             </td>
@@ -52,16 +54,18 @@
         <th>Uloga</th>
         <th></th>
         <th></th>
+        <th></th>
     </tr>
     @foreach(var korisnik in Model.Korisnici)
     {
-        <tr>
-            <td>@korisnik.Username</td>
-            <td>@korisnik.Role</td>
-            <td>@Html.ActionLink("Promeni ovlašćenja", "ChangeRoles", new { username = korisnik.Username }, new { @class="text-info" })</td>
-            <td>
-                @Html.ActionLink("Obriši", "Delete", new { userName = korisnik.Username}, new { @class="text-danger" })
-            </td>
-        </tr>
+    <tr>
+        <td>@korisnik.Username</td>
+        <td>@korisnik.Role</td>
+        <td>@Html.ActionLink("Promeni ovlašćenja", "ChangeRoles", new { username = korisnik.Username }, new { @class = "text-info" })</td>
+        <td>@Html.ActionLink("Resetuj password", "ResetPassword", new { user = korisnik.Username })</td>
+        <td>
+            @Html.ActionLink("Obriši", "Delete", new { userName = korisnik.Username }, new { @class = "text-danger" })
+        </td>
+    </tr>
     }
 </table>

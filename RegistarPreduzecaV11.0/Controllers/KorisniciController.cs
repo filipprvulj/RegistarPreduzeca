@@ -99,6 +99,28 @@ namespace RegistarPreduzecaV11._0.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult ResetPassword(string user)
+        {
+            var korisnik = db.Users.SingleOrDefault(u => u.UserName == user);
+
+            return View(korisnik);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ResetPasswordConfirm(string UserName, string password) 
+        {
+            var korisnik = db.Users.SingleOrDefault(u => u.UserName == UserName);
+
+            var userManager = Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            
+            string resetToken = userManager.GeneratePasswordResetToken(korisnik.Id);
+
+            userManager.ResetPassword(korisnik.Id, resetToken, password);
+            
+            return RedirectToAction("Index");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
