@@ -5,6 +5,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using RegistarPreduzecaV11._0.viewModel;
+using System.Web.Security;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity.Owin;
+
 namespace RegistarPreduzecaV11._0.Controllers
 {
     [Authorize(Roles = RoleName.SaPravomAdministracije)]
@@ -47,6 +53,50 @@ namespace RegistarPreduzecaV11._0.Controllers
             };
 
             return View(grupeKorisnika);
+        }
+
+        
+        public ActionResult Delete(string userName)
+        {
+            var user = db.Users.SingleOrDefault(c => c.UserName == userName);
+            db.Users.Remove(user);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult ChangeRoles(string username)
+        {
+            var user = db.Users.SingleOrDefault(u => u.UserName == username);
+            var roles = db.Roles.ToList();
+          
+            var userRolesViewModel = new KorisnikIUlogeViewModel
+            {
+                Korisnik = user,
+                Uloge = roles
+            };
+
+            return View("ChangeRolesForm", userRolesViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangeRole(KorisnikIUlogeViewModel viewModel, string role)
+        {
+            var korisnikUsername = viewModel.Korisnik.UserName;
+            var korisnik = db.Users.SingleOrDefault(u => u.UserName == korisnikUsername);
+            var korisnikRoleId = korisnik.Roles.SingleOrDefault().RoleId;
+            var korisnikRoleName = db.Roles.SingleOrDefault(r => r.Id == korisnikRoleId).Name;
+
+        
+            var userManager = Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            userManager.RemoveFromRole(korisnik.Id, korisnikRoleName);
+
+            var korisnikRoleNameNovi = db.Roles.SingleOrDefault(r => r.Id == role).Name;
+        
+            userManager.AddToRole(korisnik.Id, korisnikRoleNameNovi);
+
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
