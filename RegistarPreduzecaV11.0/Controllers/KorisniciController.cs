@@ -147,13 +147,24 @@ namespace RegistarPreduzecaV11._0.Controllers
         {
             var korisnik = db.Users.SingleOrDefault(u => u.UserName == UserName);
 
-            var userManager = Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
             
-            string resetToken = userManager.GeneratePasswordResetToken(korisnik.Id);
+                var userManager = Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                
+                string resetToken = userManager.GeneratePasswordResetToken(korisnik.Id);
 
-            userManager.ResetPassword(korisnik.Id, resetToken, password);
+                var result = userManager.ResetPassword(korisnik.Id, resetToken, password);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                   
+                    ModelState.AddModelError("Error", "Password mora sadržati jedno veliko slovo, jedan broj i jedan specijalni karakter i mora imati minimum 6 karaktera");
+                    
+                    return View("ResetPassword", korisnik);
+                }
             
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

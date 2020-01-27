@@ -16,7 +16,6 @@
     <div class="form-group">
         <label>Uloge</label>
         <select name="role" class="form-control">
-            <option></option>
             @foreach (var uloga in Model.Uloge)
             {
                 <option value="@uloga.Id">@uloga.Name</option>

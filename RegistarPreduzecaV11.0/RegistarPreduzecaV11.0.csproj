@@ -210,6 +210,14 @@
     <Compile Include="Migrations\202001272052276_ValidacijaKontaktTelefon.designer.cs">
       <DependentUpon>202001272052276_ValidacijaKontaktTelefon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001272156056_ValidacijaPreduzece.cs" />
+    <Compile Include="Migrations\202001272156056_ValidacijaPreduzece.designer.cs">
+      <DependentUpon>202001272156056_ValidacijaPreduzece.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001272306406_ValidacijaKorisnici.cs" />
+    <Compile Include="Migrations\202001272306406_ValidacijaKorisnici.designer.cs">
+      <DependentUpon>202001272306406_ValidacijaKorisnici.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Email.cs" />
@@ -348,6 +356,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001272052276_ValidacijaKontaktTelefon.resx">
       <DependentUpon>202001272052276_ValidacijaKontaktTelefon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001272156056_ValidacijaPreduzece.resx">
+      <DependentUpon>202001272156056_ValidacijaPreduzece.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001272306406_ValidacijaKorisnici.resx">
+      <DependentUpon>202001272306406_ValidacijaKorisnici.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
