@@ -194,6 +194,18 @@
     <Compile Include="Migrations\202001260030303_SeedUsers.designer.cs">
       <DependentUpon>202001260030303_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001271944359_izmena.cs" />
+    <Compile Include="Migrations\202001271944359_izmena.designer.cs">
+      <DependentUpon>202001271944359_izmena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001271956299_ValidacijaEmailModel.cs" />
+    <Compile Include="Migrations\202001271956299_ValidacijaEmailModel.designer.cs">
+      <DependentUpon>202001271956299_ValidacijaEmailModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001272019045_ValidacijaKontaktOsoba.cs" />
+    <Compile Include="Migrations\202001272019045_ValidacijaKontaktOsoba.designer.cs">
+      <DependentUpon>202001272019045_ValidacijaKontaktOsoba.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Email.cs" />
@@ -320,6 +332,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001260030303_SeedUsers.resx">
       <DependentUpon>202001260030303_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271944359_izmena.resx">
+      <DependentUpon>202001271944359_izmena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271956299_ValidacijaEmailModel.resx">
+      <DependentUpon>202001271956299_ValidacijaEmailModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001272019045_ValidacijaKontaktOsoba.resx">
+      <DependentUpon>202001272019045_ValidacijaKontaktOsoba.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
