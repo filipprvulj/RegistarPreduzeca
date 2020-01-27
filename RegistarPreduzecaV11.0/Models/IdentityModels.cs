@@ -38,7 +38,6 @@ namespace RegistarPreduzecaV11._0.Models
 		public System.Data.Entity.DbSet<RegistarPreduzecaV11._0.Models.KontaktTelefon> KontaktTelefons { get; set; }
 
 		public System.Data.Entity.DbSet<RegistarPreduzecaV11._0.Models.Email> Emails { get; set; }
-
 		
 	}
 }

@@ -55,7 +55,42 @@ namespace RegistarPreduzecaV11._0.Controllers
             return View(grupeKorisnika);
         }
 
-        
+        public ActionResult Create()
+        {
+            var viewModel = new AdminCreateUserViewModel
+            {
+                Uloge = db.Roles.ToList()
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Create(AdminCreateUserViewModel viewModel)
+        {
+            
+            if (ModelState.IsValid)
+            { 
+                var userManager = Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+                var user = new ApplicationUser
+                {
+                    Email = viewModel.Register.Email,
+                    UserName = viewModel.Register.Email
+                };
+                var result = userManager.Create(user, viewModel.Register.Password);
+                if (result.Succeeded)
+                {
+                    var role = db.Roles.SingleOrDefault(r => r.Id == viewModel.UlogaId).Name;
+
+                    userManager.AddToRole(user.Id, role);
+
+                    return RedirectToAction("Index", "Korisnici");
+                }
+            }
+            return View(viewModel);
+        }
+
+
         public ActionResult Delete(string userName)
         {
             var user = db.Users.SingleOrDefault(c => c.UserName == userName);

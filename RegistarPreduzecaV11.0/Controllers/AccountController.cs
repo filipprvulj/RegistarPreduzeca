@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using RegistarPreduzecaV11._0.Models;
+using RegistarPreduzecaV11._0.viewModel;
 
 
 namespace RegistarPreduzecaV11._0.Controllers
@@ -158,7 +159,7 @@ namespace RegistarPreduzecaV11._0.Controllers
                 if (result.Succeeded)
                 {
                     await UserManager.AddToRoleAsync(user.Id, RoleName.SaPravomPregleda);
-
+   
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
