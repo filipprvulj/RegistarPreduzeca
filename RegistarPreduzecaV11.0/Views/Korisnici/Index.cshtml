@@ -4,68 +4,100 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Spisak korisnika</h2>
-@Html.ActionLink("Novi korisnik", "Create", null, new { @class="btn btn-default" })
 
-<h4>Admini</h4>
-<table class="table table-condensed table-hover table-striped">
-    <tr>
-        <th>Korisnik</th>
-        <th>Uloga</th>
-    </tr>
-    @foreach(var korisnik in Model.Admini)
-    {
-        <tr>
-            <td>@korisnik.Username</td>
-            <td>@korisnik.Role</td>
-        </tr>
-    }
-</table>
-<hr />
+<br />
+<div class="container-fluid">
+    <br />
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Spisak korisnika</h2>
 
-<h4>Moderatori</h4>
-<table class="table table-condensed table-hover table-striped">
-    <tr>
-        <th>Korisnik</th>
-        <th>Uloga</th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    @foreach(var korisnik in Model.Moderatori)
-    {
-        <tr>
-            <td>@korisnik.Username</td>
-            <td>@korisnik.Role</td>
-            <td>@Html.ActionLink("Promeni ovlašćenja", "ChangeRoles", new { username = korisnik.Username }, new { @class = "text-info" })</td>
-            <td>@Html.ActionLink("Resetuj password","ResetPassword", new { user = korisnik.Username })</td>
-            <td>
-                @Html.ActionLink("Obriši", "Delete", new { userName = korisnik.Username }, new { @class = "text-danger" })
-            </td>
-        </tr>
-    }
-</table>
-<hr />
+            </div>
+            <div class=" col-md-6">
+                <br>
+                @Html.ActionLink("Novi korisnik", "Create", null, new { @class = "btn btn-primary pull-right" })
+            </div>
+        </div>
+        <hr />
 
-<h4>Korisnici</h4>
-<table class="table table-condensed table-hover table-striped">
-    <tr>
-        <th>Korisnik</th>
-        <th>Uloga</th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    @foreach(var korisnik in Model.Korisnici)
-    {
-    <tr>
-        <td>@korisnik.Username</td>
-        <td>@korisnik.Role</td>
-        <td>@Html.ActionLink("Promeni ovlašćenja", "ChangeRoles", new { username = korisnik.Username }, new { @class = "text-info" })</td>
-        <td>@Html.ActionLink("Resetuj password", "ResetPassword", new { user = korisnik.Username })</td>
-        <td>
-            @Html.ActionLink("Obriši", "Delete", new { userName = korisnik.Username }, new { @class = "text-danger" })
-        </td>
-    </tr>
-    }
-</table>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Admini</h4>
+                    <table class="table table-hover table-striped table-responsive">
+                    <tr>
+                        <th width="30%">Korisnik</th>
+                        <th width="30%">Uloga</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                   @foreach (var korisnik in Model.Admini)
+                    {
+                        <tr>
+                            <td width="30%">@korisnik.Username</td>
+                            <td width="30%">@korisnik.Role</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    }
+                </table>
+                <hr />
+                <br />
+            </div>
+
+            <div class="col-md-12">
+                <h4>Moderatori</h4>
+                <table class="table table-hover table-striped table-responsive">
+                    <tr>
+                        <th width="20%">Korisnik</th>
+                        <th width="30%">Uloga</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    @foreach (var korisnik in Model.Moderatori)
+                    {
+                        <tr>
+                            <td width="30%">@korisnik.Username</td>
+                            <td width="30%">@korisnik.Role</td>
+                            <td>@Html.ActionLink("Promeni ovlašćenja", "ChangeRoles", new { username = korisnik.Username }, new { @class = "text-info" })</td>
+                            <td>@Html.ActionLink("Resetuj password", "ResetPassword", new { user = korisnik.Username }, new { @class = "text-success" })</td>
+                            <td>
+                                @Html.ActionLink("Obriši", "Delete", new { userName = korisnik.Username }, new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                    }
+                </table>
+                <hr />
+                <br />
+            </div>
+
+            <div class="col-md-12">
+
+                <h4>Korisnici</h4>
+                <table class="table table-hover table-striped table-responsive">
+                    <tr>
+                        <th width="30%">Korisnik</th>
+                        <th width="30%">Uloga</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    @foreach (var korisnik in Model.Korisnici)
+                    {
+                        <tr>
+                            <td width="30%">@korisnik.Username</td>
+                            <td width="30%">@korisnik.Role</td>
+                            <td>@Html.ActionLink("Promeni ovlašćenja", "ChangeRoles", new { username = korisnik.Username }, new { @class = "text-info" })</td>
+                            <td>@Html.ActionLink("Resetuj password", "ResetPassword", new { user = korisnik.Username }, new { @class = "text-success" })</td>
+                            <td>
+                                @Html.ActionLink("Obriši", "Delete", new { userName = korisnik.Username }, new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                    }
+                </table>
+                <hr />
+            </div>
+    </div>
+</div>

@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+table a:not(.btn), .table a:not(.btn) {
+    text-decoration:none;
+}
+
+th {
+    background-color: #e3f1ff;
+}

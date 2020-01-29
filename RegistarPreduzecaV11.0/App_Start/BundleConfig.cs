@@ -23,7 +23,7 @@ namespace RegistarPreduzecaV11._0
 					  "~/Scripts/bootstrap.js"));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
-					  "~/Content/bootstrap.css",
+					  "~/Content/bootstrap-flatty.css",
 					  "~/Content/site.css"));
 		}
 	}
