@@ -64,20 +64,20 @@ namespace RegistarPreduzecaV11._0.Models
 
     public class RegisterViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Email adresa je obavezna")]
+        [EmailAddress(ErrorMessage = "Email adresa nije dobrog formata")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Polje password je obavezno")]
+        [StringLength(100, ErrorMessage = "{0} mora sadržati najmanje {2} karaktera", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Potvrdi password")]
+        [Compare("Password", ErrorMessage = "Ovo polje se ne poklapa sa poljem Passwrod")]
         public string ConfirmPassword { get; set; }
     }
 
