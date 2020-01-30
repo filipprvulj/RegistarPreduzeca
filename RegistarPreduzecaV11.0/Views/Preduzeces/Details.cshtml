@@ -3,99 +3,99 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2 class="text-center">@Html.DisplayFor(model => model.Preduzece.RegNaziv)</h2>
+ <br />
+<h1 class="text-center text-primary">@Html.DisplayFor(model => model.Preduzece.RegNaziv)</h1>
 <div>
     <hr />
 
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <table class="table table-hover table-condensed">
+                <table class="table table-hover">
                     @*<tr>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.RegNaziv)</th>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.RegAdresa)</th>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.Opstina)</th>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.PostanskiBroj)</th>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.MaticniBroj)</th>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.PIB)</th>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.SifraDelatnosti)</th>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.OpisDelatnosti)</th>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.BrojRacuna)</th>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.WebStranica)</th>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.Pecat)</th>
-                <th>@Html.DisplayNameFor(model => model.Preduzece.Beleska)</th>
-            </tr>
-            <tr>
-                <td>@Html.DisplayFor(model => model.Preduzece.RegNaziv)</td>
-                <td>@Html.DisplayFor(model => model.Preduzece.RegAdresa)</td>
-                <td>@Html.DisplayFor(model => model.Preduzece.Opstina)</td>
-                <td>@Html.DisplayFor(model => model.Preduzece.PostanskiBroj)</td>
-                <td>@Html.DisplayFor(model => model.Preduzece.MaticniBroj)</td>
-                <td>@Html.DisplayFor(model => model.Preduzece.PIB)</td>
-                <td>@Html.DisplayFor(model => model.Preduzece.SifraDelatnosti)</td>
-                <td>@Html.DisplayFor(model => model.Preduzece.OpisDelatnosti)</td>
-                <td>@Html.DisplayFor(model => model.Preduzece.BrojRacuna)</td>
-                <td>@Html.DisplayFor(model => model.Preduzece.WebStranica)</td>
-                <td>@Html.DisplayFor(model => model.Preduzece.Pecat)</td>
-                <td>@Html.DisplayFor(model => model.Preduzece.Beleska)</td>
-            </tr>*@
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.RegNaziv)</th>
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.RegAdresa)</th>
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.Opstina)</th>
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.PostanskiBroj)</th>
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.MaticniBroj)</th>
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.PIB)</th>
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.SifraDelatnosti)</th>
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.OpisDelatnosti)</th>
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.BrojRacuna)</th>
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.WebStranica)</th>
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.Pecat)</th>
+                            <th>@Html.DisplayNameFor(model => model.Preduzece.Beleska)</th>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayFor(model => model.Preduzece.RegNaziv)</td>
+                            <td>@Html.DisplayFor(model => model.Preduzece.RegAdresa)</td>
+                            <td>@Html.DisplayFor(model => model.Preduzece.Opstina)</td>
+                            <td>@Html.DisplayFor(model => model.Preduzece.PostanskiBroj)</td>
+                            <td>@Html.DisplayFor(model => model.Preduzece.MaticniBroj)</td>
+                            <td>@Html.DisplayFor(model => model.Preduzece.PIB)</td>
+                            <td>@Html.DisplayFor(model => model.Preduzece.SifraDelatnosti)</td>
+                            <td>@Html.DisplayFor(model => model.Preduzece.OpisDelatnosti)</td>
+                            <td>@Html.DisplayFor(model => model.Preduzece.BrojRacuna)</td>
+                            <td>@Html.DisplayFor(model => model.Preduzece.WebStranica)</td>
+                            <td>@Html.DisplayFor(model => model.Preduzece.Pecat)</td>
+                            <td>@Html.DisplayFor(model => model.Preduzece.Beleska)</td>
+                        </tr>*@
                     <tr>
-                        <th>@Html.DisplayNameFor(model => model.Preduzece.RegAdresa)</th>
+                        <th width="45%">@Html.DisplayNameFor(model => model.Preduzece.RegAdresa)</th>
                         <td>@Html.DisplayFor(model => model.Preduzece.RegAdresa)</td>
                     </tr>
                     <tr>
-                        <th>@Html.DisplayNameFor(model => model.Preduzece.Opstina)</th>
+                        <th width="45%">@Html.DisplayNameFor(model => model.Preduzece.Opstina)</th>
                         <td>@Html.DisplayFor(model => model.Preduzece.Opstina)</td>
                     </tr>
                     <tr>
-                        <th>@Html.DisplayNameFor(model => model.Preduzece.PostanskiBroj)</th>
+                        <th width="45%">@Html.DisplayNameFor(model => model.Preduzece.PostanskiBroj)</th>
                         <td>@Html.DisplayFor(model => model.Preduzece.PostanskiBroj)</td>
                     </tr>
                     <tr>
-                        <th>@Html.DisplayNameFor(model => model.Preduzece.MaticniBroj)</th>
+                        <th width="45%">@Html.DisplayNameFor(model => model.Preduzece.MaticniBroj)</th>
                         <td>@Html.DisplayFor(model => model.Preduzece.MaticniBroj)</td>
                     </tr>
                     <tr>
-                        <th>@Html.DisplayNameFor(model => model.Preduzece.PIB)</th>
+                        <th width="45%">@Html.DisplayNameFor(model => model.Preduzece.PIB)</th>
                         <td>@Html.DisplayFor(model => model.Preduzece.PIB)</td>
                     </tr>
                     <tr>
-                        <th>@Html.DisplayNameFor(model => model.Preduzece.SifraDelatnosti)</th>
+                        <th width="45%">@Html.DisplayNameFor(model => model.Preduzece.SifraDelatnosti)</th>
                         <td>@Html.DisplayFor(model => model.Preduzece.SifraDelatnosti)</td>
                     </tr>
                     <tr>
-                        <th>@Html.DisplayNameFor(model => model.Preduzece.OpisDelatnosti)</th>
+                        <th width="45%">@Html.DisplayNameFor(model => model.Preduzece.OpisDelatnosti)</th>
                         <td>@Html.DisplayFor(model => model.Preduzece.OpisDelatnosti)</td>
                     </tr>
                     <tr>
-                        <th>@Html.DisplayNameFor(model => model.Preduzece.BrojRacuna)</th>
+                        <th width="45%">@Html.DisplayNameFor(model => model.Preduzece.BrojRacuna)</th>
                         <td>@Html.DisplayFor(model => model.Preduzece.BrojRacuna)</td>
                     </tr>
                     <tr>
-                        <th>@Html.DisplayNameFor(model => model.Preduzece.WebStranica)</th>
+                        <th width="45%">@Html.DisplayNameFor(model => model.Preduzece.WebStranica)</th>
                         <td>@Html.DisplayFor(model => model.Preduzece.WebStranica)</td>
                     </tr>
                 </table>
             </div>
             <div class="col-md-6 text-center">
-                <img style="width: 250px; height:auto;" src="http://www.kovin-gas.co.rs/wp-content/uploads/2016/12/Pecat-firme.jpg"/>
+                <img style="width: 250px; height:auto; border:1px dashed #2c3e50; padding: 10px;" src="http://www.kovin-gas.co.rs/wp-content/uploads/2016/12/Pecat-firme.jpg" />
             </div>
         </div>
     </div>
 
-    <hr />
 
     <h3 class="text-center"> Kontakt osobe </h3>
-   
+    
     <div class="container">
         <div class="row">
             @foreach (var osoba in Model.KontaktOsoba)
             {
-                <div class="col-md-12" style="border-bottom: 2px solid black;">
-                    @{Html.RenderPartial("KontaktOsobaPartialView", osoba);}
-                </div>
 
+                <div class="col-md-6" style=" height: 370px; padding-top: 10px;">
+                    @{Html.RenderPartial("KontaktOsobaPartialView", osoba);}
+
+                </div>
             }
         </div>
 

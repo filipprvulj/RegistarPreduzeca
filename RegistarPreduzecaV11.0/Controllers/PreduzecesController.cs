@@ -23,6 +23,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 		}
 
 		// GET: Preduzeces/Details/5
+		[AllowAnonymous]
 		public ActionResult Details(int? id)
 		{
 			if (id == null)
@@ -69,7 +70,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 		}
 
 		// GET: Preduzeces/Create
-        [Authorize(Roles = RoleName.SaPravomUnosaIliAdministracije)]
+		[Authorize(Roles = RoleName.SaPravomUnosaIliAdministracije)]
 		public ActionResult Create()
 		{
 			return View();
@@ -80,7 +81,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 		// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-        [Authorize(Roles = RoleName.SaPravomUnosaIliAdministracije)]
+		[Authorize(Roles = RoleName.SaPravomUnosaIliAdministracije)]
 		public ActionResult Create([Bind(Include = "Id,RegNaziv,RegAdresa,Opstina,PostanskiBroj,MaticniBroj,PIB,SifraDelatnosti,OpisDelatnosti,BrojRacuna,WebStranica,Pecat,Beleska")] Preduzece preduzece)
 		{
 			if (ModelState.IsValid)
@@ -94,7 +95,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 		}
 
 		// GET: Preduzeces/Edit/5
-        [Authorize(Roles = RoleName.SaPravomUnosaIliAdministracije)]
+		[Authorize(Roles = RoleName.SaPravomUnosaIliAdministracije)]
 		public ActionResult Edit(int? id)
 		{
 			if (id == null)
@@ -114,7 +115,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 		// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-        [Authorize(Roles = RoleName.SaPravomUnosaIliAdministracije)]
+		[Authorize(Roles = RoleName.SaPravomUnosaIliAdministracije)]
 		public ActionResult Edit([Bind(Include = "Id,RegNaziv,RegAdresa,Opstina,PostanskiBroj,MaticniBroj,PIB,SifraDelatnosti,OpisDelatnosti,BrojRacuna,WebStranica,Pecat,Beleska")] Preduzece preduzece)
 		{
 			if (ModelState.IsValid)
@@ -145,7 +146,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 		// POST: Preduzeces/Delete/5
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
-        [Authorize(Roles = RoleName.SaPravomAdministracije)]
+		[Authorize(Roles = RoleName.SaPravomAdministracije)]
 		public ActionResult DeleteConfirmed(int id)
 		{
 			Preduzece preduzece = db.Preduzeces.Find(id);
@@ -154,6 +155,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 			return RedirectToAction("Index");
 		}
 
+		[AllowAnonymous]
 		public ActionResult Convert(int id)
 		{
 			//PdfConverter pdfConverter = new PdfConverter();

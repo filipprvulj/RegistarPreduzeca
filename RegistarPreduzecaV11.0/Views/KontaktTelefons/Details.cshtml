@@ -47,4 +47,9 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
+    @if (User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomAdministracije))
+    {
+       @Html.ActionLink("Obriši", "Delete", new { id = Model.Id }, new { @class = "text-danger" })
+        
+    }
 </p>
