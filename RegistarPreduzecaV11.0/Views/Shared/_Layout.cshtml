@@ -28,7 +28,7 @@
                     @if (User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomAdministracije)
                         || User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomUnosa))
                     {
-                        <li>@Html.ActionLink("Osoba", "Index", "KontaktOsobas")</li>
+                        <li>@Html.ActionLink("Kontakt osobe", "Index", "KontaktOsobas")</li>
                         <li>@Html.ActionLink("Mejlovi", "Index", "Emails")</li>
                         <li>@Html.ActionLink("Telefon", "Index", "KontaktTelefons")</li>
                     }

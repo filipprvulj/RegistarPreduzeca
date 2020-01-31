@@ -12,34 +12,7 @@
         <div class="row">
             <div class="col-md-6">
                 <table class="table table-hover">
-                    @*<tr>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.RegNaziv)</th>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.RegAdresa)</th>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.Opstina)</th>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.PostanskiBroj)</th>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.MaticniBroj)</th>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.PIB)</th>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.SifraDelatnosti)</th>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.OpisDelatnosti)</th>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.BrojRacuna)</th>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.WebStranica)</th>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.Pecat)</th>
-                            <th>@Html.DisplayNameFor(model => model.Preduzece.Beleska)</th>
-                        </tr>
-                        <tr>
-                            <td>@Html.DisplayFor(model => model.Preduzece.RegNaziv)</td>
-                            <td>@Html.DisplayFor(model => model.Preduzece.RegAdresa)</td>
-                            <td>@Html.DisplayFor(model => model.Preduzece.Opstina)</td>
-                            <td>@Html.DisplayFor(model => model.Preduzece.PostanskiBroj)</td>
-                            <td>@Html.DisplayFor(model => model.Preduzece.MaticniBroj)</td>
-                            <td>@Html.DisplayFor(model => model.Preduzece.PIB)</td>
-                            <td>@Html.DisplayFor(model => model.Preduzece.SifraDelatnosti)</td>
-                            <td>@Html.DisplayFor(model => model.Preduzece.OpisDelatnosti)</td>
-                            <td>@Html.DisplayFor(model => model.Preduzece.BrojRacuna)</td>
-                            <td>@Html.DisplayFor(model => model.Preduzece.WebStranica)</td>
-                            <td>@Html.DisplayFor(model => model.Preduzece.Pecat)</td>
-                            <td>@Html.DisplayFor(model => model.Preduzece.Beleska)</td>
-                        </tr>*@
+                
                     <tr>
                         <th width="45%">@Html.DisplayNameFor(model => model.Preduzece.RegAdresa)</th>
                         <td>@Html.DisplayFor(model => model.Preduzece.RegAdresa)</td>
@@ -79,7 +52,7 @@
                 </table>
             </div>
             <div class="col-md-6 text-center">
-                <img style="width: 250px; height:auto; border:1px dashed #2c3e50; padding: 10px;" src="http://www.kovin-gas.co.rs/wp-content/uploads/2016/12/Pecat-firme.jpg" />
+                <img style="width: 250px; height:auto; border:1px dashed #2c3e50; padding: 10px;" src="@Model.Preduzece.Pecat" />
             </div>
         </div>
     </div>
@@ -101,6 +74,7 @@
 
     </div>
     <br />
+    <hr />
     <div class="container">
         <b>@Html.DisplayNameFor(model => model.Preduzece.Beleska)</b>
         @Html.DisplayTextFor(model => model.Preduzece.Beleska)

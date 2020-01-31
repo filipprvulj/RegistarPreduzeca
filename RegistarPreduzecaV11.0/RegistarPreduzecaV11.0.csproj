@@ -218,6 +218,14 @@
     <Compile Include="Migrations\202001272306406_ValidacijaKorisnici.designer.cs">
       <DependentUpon>202001272306406_ValidacijaKorisnici.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001312134490_PecatRequired.cs" />
+    <Compile Include="Migrations\202001312134490_PecatRequired.designer.cs">
+      <DependentUpon>202001312134490_PecatRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001312140489_RemoveRequiredPecat.cs" />
+    <Compile Include="Migrations\202001312140489_RemoveRequiredPecat.designer.cs">
+      <DependentUpon>202001312140489_RemoveRequiredPecat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Email.cs" />
@@ -323,6 +331,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -364,6 +373,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001272306406_ValidacijaKorisnici.resx">
       <DependentUpon>202001272306406_ValidacijaKorisnici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001312134490_PecatRequired.resx">
+      <DependentUpon>202001312134490_PecatRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001312140489_RemoveRequiredPecat.resx">
+      <DependentUpon>202001312140489_RemoveRequiredPecat.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

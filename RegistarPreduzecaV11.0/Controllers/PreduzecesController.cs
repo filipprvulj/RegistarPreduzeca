@@ -82,10 +82,25 @@ namespace RegistarPreduzecaV11._0.Controllers
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[Authorize(Roles = RoleName.SaPravomUnosaIliAdministracije)]
-		public ActionResult Create([Bind(Include = "Id,RegNaziv,RegAdresa,Opstina,PostanskiBroj,MaticniBroj,PIB,SifraDelatnosti,OpisDelatnosti,BrojRacuna,WebStranica,Pecat,Beleska")] Preduzece preduzece)
+		public ActionResult Create([Bind(Include = "Id,RegNaziv,RegAdresa,Opstina,PostanskiBroj,MaticniBroj,PIB,SifraDelatnosti,OpisDelatnosti,BrojRacuna,WebStranica,Pecat,Beleska")] Preduzece preduzece, HttpPostedFileBase pecat)
 		{
 			if (ModelState.IsValid)
 			{
+                if(pecat == null)
+                {
+                    ModelState.AddModelError("Error", "Morate uneti pečat");
+
+                    return (View("Create", preduzece));
+                }
+                string fileName = System.IO.Path.GetFileName(pecat.FileName);
+
+                string filePath = "/img/"+fileName;
+
+                pecat.SaveAs(Server.MapPath(filePath));
+
+                preduzece.Pecat = filePath;
+
+
 				db.Preduzeces.Add(preduzece);
 				db.SaveChanges();
 				return RedirectToAction("Index");
@@ -116,12 +131,29 @@ namespace RegistarPreduzecaV11._0.Controllers
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[Authorize(Roles = RoleName.SaPravomUnosaIliAdministracije)]
-		public ActionResult Edit([Bind(Include = "Id,RegNaziv,RegAdresa,Opstina,PostanskiBroj,MaticniBroj,PIB,SifraDelatnosti,OpisDelatnosti,BrojRacuna,WebStranica,Pecat,Beleska")] Preduzece preduzece)
+		public ActionResult Edit([Bind(Include = "Id,RegNaziv,RegAdresa,Opstina,PostanskiBroj,MaticniBroj,PIB,SifraDelatnosti,OpisDelatnosti,BrojRacuna,WebStranica, Pecat, Beleska")] Preduzece preduzece, HttpPostedFileBase pecat)
 		{
 			if (ModelState.IsValid)
 			{
-				db.Entry(preduzece).State = EntityState.Modified;
-				db.SaveChanges();
+                if (pecat == null)
+                {
+                    var preduzeceIzBaze = db.Preduzeces.AsNoTracking().SingleOrDefault(p => p.Id == preduzece.Id);
+
+                    preduzece.Pecat = preduzeceIzBaze.Pecat;
+                }
+                else
+                {
+                    string fileName = System.IO.Path.GetFileName(pecat.FileName);
+
+                    string filePath = "/img/" + fileName;
+
+                    pecat.SaveAs(Server.MapPath(filePath));
+
+                    preduzece.Pecat = filePath;
+                }
+
+                db.Entry(preduzece).State = EntityState.Modified;
+                db.SaveChanges();
 				return RedirectToAction("Index");
 			}
 			return View(preduzece);

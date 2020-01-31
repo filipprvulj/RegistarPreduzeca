@@ -29,4 +29,18 @@ table a:not(.btn), .table a:not(.btn) {
 
 th {
     background-color: #e3f1ff;
+    
+}
+
+.input-validation-error{
+    border-color:red;
+}
+
+.input-validation-error:focus{
+    border-color: red;
+}
+
+textarea {
+    width:280px;
+    height: 250px;
 }
