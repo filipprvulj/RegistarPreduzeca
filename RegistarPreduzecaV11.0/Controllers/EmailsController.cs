@@ -29,7 +29,7 @@ namespace RegistarPreduzecaV11._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Email email = db.Emails.Find(id);
+            Email email = db.Emails.Include(k=>k.KontaktOsoba).SingleOrDefault(e=>e.Id == id);
             if (email == null)
             {
                 return HttpNotFound();

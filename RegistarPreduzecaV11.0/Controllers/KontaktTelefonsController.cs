@@ -29,7 +29,7 @@ namespace RegistarPreduzecaV11._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Find(id);
+            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Include(o=>o.KontaktOsoba).SingleOrDefault(t=>t.Id == id);
             if (kontaktTelefon == null)
             {
                 return HttpNotFound();
@@ -103,7 +103,7 @@ namespace RegistarPreduzecaV11._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Find(id);
+            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Include(o=>o.KontaktOsoba).SingleOrDefault(t=>t.Id==id);
             if (kontaktTelefon == null)
             {
                 return HttpNotFound();
@@ -117,7 +117,7 @@ namespace RegistarPreduzecaV11._0.Controllers
         [Authorize(Roles = RoleName.SaPravomAdministracije)]
         public ActionResult DeleteConfirmed(int id)
         {
-            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Find(id);
+            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Include(o => o.KontaktOsoba).SingleOrDefault(t => t.Id == id);
             db.KontaktTelefons.Remove(kontaktTelefon);
             db.SaveChanges();
             return RedirectToAction("Index");
