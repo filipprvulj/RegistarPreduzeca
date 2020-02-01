@@ -7,7 +7,7 @@ using RegistarPreduzecaV11._0.Models;
 namespace RegistarPreduzecaV11._0.Tests.Controllers
 {
     [TestClass]
-    public class UnitTest1
+    public class KontaktTelefonsControllerTest
     {
         [TestMethod]
         public void Details()

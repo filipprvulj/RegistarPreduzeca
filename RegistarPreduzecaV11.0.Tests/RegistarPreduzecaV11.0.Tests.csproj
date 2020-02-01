@@ -96,7 +96,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\UnitTest1.cs" />
+    <Compile Include="Controllers\KontaktTelefonsControllerTest.cs" />
+    <Compile Include="Controllers\EmailsControllerTest.cs" />
+    <Compile Include="Controllers\KontaktOsobasControllerTest.cs" />
+    <Compile Include="Controllers\PreduzecesControllerTest.cs" />
+    <Compile Include="Controllers\KorisniciControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
