@@ -35,5 +35,8 @@ namespace RegistarPreduzecaV11._0.Models
 		public int PreduzeceId { get; set; }
 
 		public Preduzece Preduzece { get; set; }
-	}
+
+        [Display(Name = "Kontakt osoba")]
+        public string PunoIme { get; set; }
+    }
 }

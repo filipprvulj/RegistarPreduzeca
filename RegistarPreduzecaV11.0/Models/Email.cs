@@ -6,15 +6,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RegistarPreduzecaV11._0.Models
 {
-	public class Email
-	{
-		public int Id { get; set; }
+    public enum OznakaTipaEmail { Poslovni, Privatni }
 
-		[Display(Name = "Tip")]
-		[StringLength(50, ErrorMessage = "Možete uneti maksimalno 50 karaktera")]
-		[RegularExpression(@"^[a-zA-Z]+$",ErrorMessage ="Možete uneti samo slova")]
-		[Required(ErrorMessage = "Morate uneti tip")]
-		public string OznakaTipa { get; set; }
+    public class Email
+    {
+        
+        public int Id { get; set; }
+
+        [Display(Name = "Tip")]
+        //[StringLength(50, ErrorMessage = "Možete uneti maksimalno 50 karaktera")]
+        //[RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Možete uneti samo slova")]
+        [Required(ErrorMessage = "Morate uneti tip")]
+        public OznakaTipaEmail OznakaTipa { get; set; }
 
 		[Display(Name = "E-mail adresa")]
 		[EmailAddress(ErrorMessage = "Uneta adresa nije dobrog formata")]

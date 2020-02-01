@@ -73,18 +73,23 @@
         </div>
 
     </div>
-    <br />
-    <hr />
+    
     <div class="container">
-        <b>@Html.DisplayNameFor(model => model.Preduzece.Beleska)</b>
-        @Html.DisplayTextFor(model => model.Preduzece.Beleska)
+        <div class="row">
+            <div class="col-md-6">
+                <b>@Html.DisplayNameFor(model => model.Preduzece.Beleska)</b>
+                @Html.DisplayTextFor(model => model.Preduzece.Beleska)
+            </div>
+            <div class="col-md-6">
+                @Html.ActionLink("Štampanje", "Convert", new { id = Model.Preduzece.Id }, new { @class = "pull-right btn btn-primary"})
+            </div>
+        </div>
     </div>
 </div>
-<div class="container">
+@*<div class="container">
 
-@Html.ActionLink("pdf", "Convert", new { id = Model.Preduzece.Id }, new { @class = "pull-right" })
 </div>
 <p>
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")*@
-</p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+</p>*@

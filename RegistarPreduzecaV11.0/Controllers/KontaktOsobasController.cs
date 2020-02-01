@@ -57,6 +57,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+                kontaktOsoba.PunoIme = kontaktOsoba.Ime + " " + kontaktOsoba.Prezime;
 				db.KontaktOsobas.Add(kontaktOsoba);
 				db.SaveChanges();
 				return RedirectToAction("Index");

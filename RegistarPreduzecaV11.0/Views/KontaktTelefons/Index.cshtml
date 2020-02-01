@@ -22,7 +22,7 @@
             <table class="table table-hover table-striped">
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.KontaktOsoba.Ime)
+                        @Html.DisplayNameFor(model => model.KontaktOsoba.PunoIme)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.OznakaTipa)
@@ -44,7 +44,7 @@
             @foreach (var item in Model) {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.KontaktOsoba.Ime)
+                            @Html.DisplayFor(modelItem => item.KontaktOsoba.PunoIme)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.OznakaTipa)
