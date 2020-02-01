@@ -19,7 +19,7 @@ namespace RegistarPreduzecaV11._0.Models
 		[Required(ErrorMessage = "Morate uneti adresu")]
 		[Display(Name = "Registrovana adresa preduzeća")]
 		[StringLength(100, ErrorMessage = "Možete uneti najviše 100 karaktera")]
-		[RegularExpression(@"^[a-zA-Z]+\s{1}\d{1,3}$", ErrorMessage = "Adresa nije dobrog formata")]
+		[RegularExpression(@"^[a-zA-Z]+\s?[a-zA-Z]*\s?\d{1,3}$", ErrorMessage = "Adresa nije dobrog formata")]
 		public string RegAdresa { get; set; }
 
 		[Display(Name = "Opština")]
@@ -31,7 +31,7 @@ namespace RegistarPreduzecaV11._0.Models
 
 		[Display(Name = "Poštaniski broj")]
 		[Required(ErrorMessage = "Morate uneti poštanski broj")]
-		[RegularExpression(@"\d{6}", ErrorMessage = "Poštanski broj mora imati tačno 6 cifara")]
+		[RegularExpression(@"\d{5}", ErrorMessage = "Poštanski broj mora imati tačno 5 cifara")]
 		public int PostanskiBroj { get; set; }
 
 		[Display(Name = "Matični broj")]
@@ -51,11 +51,11 @@ namespace RegistarPreduzecaV11._0.Models
 		[Display(Name = "Opis delatnosti")]
 		[Required(ErrorMessage = "Morate uneti opis delatnosti")]
 		[StringLength(80, ErrorMessage ="Opis delatnosti može imati maksimalno 80 karaktera")]
-		[RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Možete uneti samo slova")]
+		[RegularExpression(@"^[a-zA-Z]+\s?[a-zA-Z]*$", ErrorMessage = "Možete uneti samo slova")]
 		public string OpisDelatnosti { get; set; }
 
 		[Display(Name = "Broj računa")]
-		[Required(ErrorMessage = "Morate broj računa")]
+		[Required(ErrorMessage = "Morate uneti broj računa")]
 		[RegularExpression(@"\d{18}",ErrorMessage = "Broj računa mora imati tačno 18 cifara")]
 		public string BrojRacuna { get; set; }
 

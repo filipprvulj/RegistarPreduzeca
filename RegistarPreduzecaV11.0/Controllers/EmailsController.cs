@@ -58,6 +58,12 @@ namespace RegistarPreduzecaV11._0.Controllers
                 return RedirectToAction("Index");
             }
 
+            //var kontaktOsobe = db.KontaktOsobas.Select(ko => new
+            //{
+            //    Text = ko.Ime + " " + ko.Prezime,
+            //    Id = ko.Id
+            //}).ToList();
+
             ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "Ime", email.KontaktOsobaId);
             return View(email);
         }
@@ -103,7 +109,7 @@ namespace RegistarPreduzecaV11._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Email email = db.Emails.Find(id);
+            Email email = db.Emails.Include(e => e.KontaktOsoba).SingleOrDefault(e => e.Id == id);
             if (email == null)
             {
                 return HttpNotFound();

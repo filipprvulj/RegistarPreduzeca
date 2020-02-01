@@ -103,7 +103,7 @@ namespace RegistarPreduzecaV11._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Include(o=>o.KontaktOsoba).SingleOrDefault(t=>t.Id==id);
+            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Include(o => o.KontaktOsoba).SingleOrDefault(o => o.Id == id);
             if (kontaktTelefon == null)
             {
                 return HttpNotFound();

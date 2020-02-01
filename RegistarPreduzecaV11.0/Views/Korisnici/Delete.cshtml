@@ -1,7 +1,7 @@
-﻿@model RegistarPreduzecaV11._0.Models.KontaktTelefon
-
+﻿@model RegistarPreduzecaV11._0.viewModel.KorisnikViewModel
 @{
     ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
@@ -11,11 +11,15 @@
     <hr />
     <table class="table table-hover">
         <tr>
-            <th width="10%">@Html.DisplayNameFor(model => model.KontaktOsoba.Ime)</th>
-            <td>@Html.DisplayFor(model => model.KontaktOsoba.Ime)</td>
+            <th width="10%">@Html.DisplayNameFor(model => model.Username)</th>
+            <td>@Html.DisplayFor(model => model.Username)</td>
         </tr>
         <tr>
-            <th width="10%">@Html.DisplayNameFor(model => model.OznakaTipa)</th>
+            <th width="10%">@Html.DisplayNameFor(model=>model.Role)</th>
+            <td>@Html.DisplayFor(model=>model.Role)</td>
+        </tr>
+        @*<tr>
+            <th width="10%">@Html.DisplayNameFor(model => model.)</th>
             <td>@Html.DisplayFor(model => model.OznakaTipa)</td>
         </tr>
         <tr>
@@ -25,7 +29,7 @@
         <tr>
             <th width="10%">@Html.DisplayNameFor(model => model.Lokal)</th>
             <td>@Html.DisplayFor(model => model.Lokal)</td>
-        </tr>
+        </tr>*@
     </table>
 
     @using (Html.BeginForm())

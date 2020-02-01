@@ -64,7 +64,7 @@
                             <td>@Html.ActionLink("Promeni ovlašćenja", "ChangeRoles", new { username = korisnik.Username }, new { @class = "text-info" })</td>
                             <td>@Html.ActionLink("Resetuj password", "ResetPassword", new { user = korisnik.Username }, new { @class = "text-success" })</td>
                             <td>
-                                @Html.ActionLink("Obriši", "Delete", new { userName = korisnik.Username }, new { @class = "text-danger" })
+                                @Html.ActionLink("Obriši", "Delete", new { Username = korisnik.Username, Role = korisnik.Role }, new { @class = "text-danger" })
                             </td>
                         </tr>
                     }
@@ -92,7 +92,7 @@
                             <td>@Html.ActionLink("Promeni ovlašćenja", "ChangeRoles", new { username = korisnik.Username }, new { @class = "text-info" })</td>
                             <td>@Html.ActionLink("Resetuj password", "ResetPassword", new { user = korisnik.Username }, new { @class = "text-success" })</td>
                             <td>
-                                @Html.ActionLink("Obriši", "Delete", new { userName = korisnik.Username }, new { @class = "text-danger" })
+                                @Html.ActionLink("Obriši", "Delete", new { Username = korisnik.Username, Role = korisnik.Role }, new { @class = "text-danger" })
                             </td>
                         </tr>
                     }

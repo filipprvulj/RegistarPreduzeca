@@ -328,6 +328,7 @@
     <Content Include="Views\Korisnici\ChangeRolesForm.cshtml" />
     <Content Include="Views\Korisnici\ResetPassword.cshtml" />
     <Content Include="Views\Korisnici\Create.cshtml" />
+    <Content Include="Views\Korisnici\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

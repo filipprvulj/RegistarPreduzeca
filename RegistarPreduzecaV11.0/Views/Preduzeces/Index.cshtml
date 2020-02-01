@@ -32,15 +32,12 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Opstina)
                     </th>
-                    <th>
+                    @*<th>
                         @Html.DisplayNameFor(model => model.PostanskiBroj)
-                    </th>
+                    </th>*@
 
                     <th>
                         @Html.DisplayNameFor(model => model.OpisDelatnosti)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.BrojRacuna)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.WebStranica)
@@ -55,6 +52,9 @@
                         || User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomUnosa))
                     {
                         <th></th>
+                    }
+                    @if (User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomAdministracije))
+                    {
                         <th></th>
                     }
                 </tr>
@@ -71,16 +71,14 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Opstina)
                         </td>
-                        <td>
+                        @*<td>
                             @Html.DisplayFor(modelItem => item.PostanskiBroj)
-                        </td>
+                        </td>*@
 
                         <td>
                             @Html.DisplayFor(modelItem => item.OpisDelatnosti)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.BrojRacuna)
-                        </td>
+        
                         <td>
                             @Html.DisplayFor(modelItem => item.WebStranica)
                         </td>

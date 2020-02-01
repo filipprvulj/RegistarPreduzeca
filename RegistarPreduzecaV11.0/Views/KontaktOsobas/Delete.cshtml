@@ -4,53 +4,88 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+@*<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>KontaktOsoba</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                
+            </dt>
+
+            <dd>
+                
+            </dd>
+
+            <dt>
+                
+            </dt>
+
+            <dd>
+                
+            </dd>
+
+            <dt>
+                
+            </dt>
+
+            <dd>
+                
+            </dd>
+
+            <dt>
+                
+            </dt>
+
+            <dd>
+                
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-primary" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>*@
+<br />
+<h2>Da li ste sigurni da želite da obrišete ovu osobu?</h2>
 <div>
-    <h4>KontaktOsoba</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Preduzece.RegNaziv)
-        </dt>
+    <table class="table table-hover">
+        <tr>
+            <th width="20%">@Html.DisplayNameFor(model => model.Preduzece.RegNaziv)</th>
+            <td>@Html.DisplayFor(model => model.Preduzece.RegNaziv)</td>
+        </tr>
+        <tr>
+            <th width="20%">@Html.DisplayNameFor(model => model.Ime)</th>
+            <td>@Html.DisplayFor(model => model.Ime)</td>
+        </tr>
+        <tr>
+            <th width="20%">@Html.DisplayNameFor(model => model.Prezime)</th>
+            <td>@Html.DisplayFor(model => model.Prezime)</td>
+        </tr>
+        <tr>
+            <th width="20%">@Html.DisplayNameFor(model => model.RadnoMesto)</th>
+            <td>@Html.DisplayFor(model => model.RadnoMesto)</td>
+        </tr>
+    </table>
 
-        <dd>
-            @Html.DisplayFor(model => model.Preduzece.RegNaziv)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Prezime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Prezime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RadnoMesto)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RadnoMesto)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-primary" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Obriši" class="btn btn-danger btn-sm " />
+            <br />
+            <br />
+            @Html.ActionLink("Vrati se na listu", "Index")
         </div>
     }
 </div>

@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<br />
 <h2>Promeni ovlašćenje</h2>
 
 @using (Html.BeginForm("ChangeRole", "Korisnici"))
@@ -24,8 +25,12 @@
     </div>
     @*@Html.HiddenFor(id=>id.UlogaId)*@
     <button class="btn btn-primary" type="submit">Promeni</button>
-
+    
 }
+<br />
+<div>
+    @Html.ActionLink("Vrati se na listu", "Index")
+</div>
 
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")

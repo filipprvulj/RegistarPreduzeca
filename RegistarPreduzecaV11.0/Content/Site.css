@@ -44,3 +44,19 @@ textarea {
     width:280px;
     height: 250px;
 }
+
+/*td{
+    height: 50px;
+}*/
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: rgba(230, 230, 230,0.4);
+}
+
+/*.table-hover > tbody > tr:hover {
+    background-color: #ecf0f1;
+}*/
+
+.table-hover > tbody > tr:hover {
+    background-color: rgba(213, 241, 245,0.2);
+}
