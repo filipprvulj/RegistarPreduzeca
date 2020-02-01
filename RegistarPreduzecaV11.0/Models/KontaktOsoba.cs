@@ -23,7 +23,7 @@ namespace RegistarPreduzecaV11._0.Models
 		[Display(Name = "Radno mesto")]
 		[Required(ErrorMessage = "Morate uneti radno mesto")]
 		[StringLength(50, ErrorMessage = "Možete uneti maksimalno 50 karaktera")]
-		[RegularExpression(@"^[a-zA-Z]+$",ErrorMessage = "Možete uneti samo slova")]
+		[RegularExpression(@"^[a-zA-Z]+\s?[a-zA-Z]*$",ErrorMessage = "Možete uneti samo slova")]
 		public string RadnoMesto { get; set; }
 
 		public ICollection<KontaktTelefon> KontaktTelefoni { get; set; }
@@ -35,5 +35,8 @@ namespace RegistarPreduzecaV11._0.Models
 		public int PreduzeceId { get; set; }
 
 		public Preduzece Preduzece { get; set; }
-	}
+
+        [Display(Name = "Kontakt osoba")]
+        public string PunoIme { get; set; }
+    }
 }

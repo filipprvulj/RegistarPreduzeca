@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace RegistarPreduzecaV11._0.Controllers
 {
@@ -90,13 +91,18 @@ namespace RegistarPreduzecaV11._0.Controllers
             return View(viewModel);
         }
 
-
-        public ActionResult Delete(string userName)
+        public ActionResult Delete(KorisnikViewModel korisnik)
         {
-            var user = db.Users.SingleOrDefault(c => c.UserName == userName);
+            return View(korisnik);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(KorisnikViewModel korisnik)
+        {
+            var user = db.Users.SingleOrDefault(k => k.UserName == korisnik.Username);
             db.Users.Remove(user);
             db.SaveChanges();
-
             return RedirectToAction("Index");
         }
 

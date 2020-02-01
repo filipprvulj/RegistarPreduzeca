@@ -13,25 +13,13 @@
 		
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-12">
-						<br />
-						<b>Osnovni podaci</b>
-						<table class="table table-condensed">
-							<tr>
-								<th>@Html.DisplayNameFor(model => model.Ime)</th>
-								<th>@Html.DisplayNameFor(model => model.Prezime)</th>
-								<th>@Html.DisplayNameFor(model => model.RadnoMesto)</th>
-							</tr>
-							<tr>
-								<td>@Html.DisplayFor(model => model.Ime)</td>
-								<td>@Html.DisplayFor(model => model.Prezime)</td>
-								<td>@Html.DisplayFor(model => model.RadnoMesto)</td>
-							</tr>
-							
-						</table>
-					<br />
+					<div class="col-md-12" style="height: 50px">
+						
+                        <h4>@Html.DisplayFor(m => m.Ime) @Html.DisplayFor(m => m.Prezime) - @Html.DisplayFor(m => m.RadnoMesto) </h4> 
+                	
 					</div>
-					<div class="col-md-12">
+                    
+					<div class="col-md-12" style="height:150px">
 						<b>Kontakt telefon</b>
 						<table class="table table-condensed">
 							<tr>
@@ -44,9 +32,9 @@
 								<tr>@{Html.RenderPartial("KontaktTelefonPartialView", kontaktTelefon);}</tr>
 							}
 						</table>
-						<br />
+						
 					</div>
-					<div class="col-md-12">
+                    <div class="col-md-12" style="height:100px;">
 						<b>E-mail</b>
 						<table class="table table-condensed">
 							<tr>

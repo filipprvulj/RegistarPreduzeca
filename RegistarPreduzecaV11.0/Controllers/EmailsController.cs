@@ -29,7 +29,7 @@ namespace RegistarPreduzecaV11._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Email email = db.Emails.Find(id);
+            Email email = db.Emails.Include(k=>k.KontaktOsoba).SingleOrDefault(e=>e.Id == id);
             if (email == null)
             {
                 return HttpNotFound();
@@ -40,7 +40,7 @@ namespace RegistarPreduzecaV11._0.Controllers
         // GET: Emails/Create
         public ActionResult Create()
         {
-            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "Ime");
+            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "PunoIme");
             return View();
         }
 
@@ -58,7 +58,13 @@ namespace RegistarPreduzecaV11._0.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "Ime", email.KontaktOsobaId);
+            //var kontaktOsobe = db.KontaktOsobas.Select(ko => new
+            //{
+            //    Text = ko.Ime + " " + ko.Prezime,
+            //    Id = ko.Id
+            //}).ToList();
+            
+            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "PunoIme", email.KontaktOsobaId);
             return View(email);
         }
 
@@ -74,7 +80,7 @@ namespace RegistarPreduzecaV11._0.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "Ime", email.KontaktOsobaId);
+            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "PunoIme", email.KontaktOsobaId);
             return View(email);
         }
 
@@ -91,7 +97,7 @@ namespace RegistarPreduzecaV11._0.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "Ime", email.KontaktOsobaId);
+            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "PunoIme", email.KontaktOsobaId);
             return View(email);
         }
 
@@ -103,7 +109,7 @@ namespace RegistarPreduzecaV11._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Email email = db.Emails.Find(id);
+            Email email = db.Emails.Include(e => e.KontaktOsoba).SingleOrDefault(e => e.Id == id);
             if (email == null)
             {
                 return HttpNotFound();

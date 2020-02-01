@@ -1,0 +1,46 @@
+﻿@model RegistarPreduzecaV11._0.viewModel.KorisnikViewModel
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<h2>Da li ste sigurni da želite da obrišete ovaj kontakt telefon?</h2>
+<div>
+    <hr />
+    <table class="table table-hover">
+        <tr>
+            <th width="10%">@Html.DisplayNameFor(model => model.Username)</th>
+            <td>@Html.DisplayFor(model => model.Username)</td>
+        </tr>
+        <tr>
+            <th width="10%">@Html.DisplayNameFor(model=>model.Role)</th>
+            <td>@Html.DisplayFor(model=>model.Role)</td>
+        </tr>
+        @*<tr>
+            <th width="10%">@Html.DisplayNameFor(model => model.)</th>
+            <td>@Html.DisplayFor(model => model.OznakaTipa)</td>
+        </tr>
+        <tr>
+            <th width="10%">@Html.DisplayNameFor(model => model.BrojTelefona)</th>
+            <td>@Html.DisplayFor(model => model.BrojTelefona)</td>
+        </tr>
+        <tr>
+            <th width="10%">@Html.DisplayNameFor(model => model.Lokal)</th>
+            <td>@Html.DisplayFor(model => model.Lokal)</td>
+        </tr>*@
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-danger btn-sm " />
+            <br />
+            <br />
+            @Html.ActionLink("Vrati se na listu", "Index")
+        </div>
+    }
+</div>

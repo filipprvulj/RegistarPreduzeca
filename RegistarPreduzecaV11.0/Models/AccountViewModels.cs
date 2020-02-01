@@ -58,7 +58,7 @@ namespace RegistarPreduzecaV11._0.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Zapamti šifru?")]
         public bool RememberMe { get; set; }
     }
 

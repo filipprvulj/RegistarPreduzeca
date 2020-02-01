@@ -3,48 +3,38 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
+<br />
+<h2>Kontakt telefon - detalji</h2>
 
 <div>
-    <h4>KontaktTelefon</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.KontaktOsoba.Ime)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.KontaktOsoba.Ime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.OznakaTipa)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OznakaTipa)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BrojTelefona)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BrojTelefona)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Lokal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Lokal)
-        </dd>
-
-    </dl>
+    <table class="table table-hover">
+        <tr>
+            <th width="10%">@Html.DisplayNameFor(model => model.KontaktOsoba.Ime)</th>
+            <td>@Html.DisplayFor(model => model.KontaktOsoba.Ime)</td>
+        </tr>
+        <tr>
+            <th width="10%">@Html.DisplayNameFor(model => model.OznakaTipa)</th>
+            <td>@Html.DisplayFor(model => model.OznakaTipa)</td>
+        </tr>
+        <tr>
+            <th width="10%">@Html.DisplayNameFor(model => model.BrojTelefona)</th>
+            <td>@Html.DisplayFor(model => model.BrojTelefona)</td>
+        </tr>
+        <tr>
+            <th width="10%">@Html.DisplayNameFor(model => model.Lokal)</th>
+            <td>@Html.DisplayFor(model=>model.BrojTelefona)</td>
+        </tr>
+    </table>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Izmeni", "Edit", new { id = Model.Id }, new { @class="btn btn-primary btn-sm" })
+    @if (User.IsInRole(RegistarPreduzecaV11._0.Models.RoleName.SaPravomAdministracije))
+    {
+        @Html.ActionLink("Obriši", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger btn-sm" })
+    }
+    <br />
+    <br />
+    @Html.ActionLink("Vrati se na listu", "Index")
 </p>

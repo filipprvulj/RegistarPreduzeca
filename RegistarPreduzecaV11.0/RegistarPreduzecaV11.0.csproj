@@ -218,6 +218,26 @@
     <Compile Include="Migrations\202001272306406_ValidacijaKorisnici.designer.cs">
       <DependentUpon>202001272306406_ValidacijaKorisnici.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001312134490_PecatRequired.cs" />
+    <Compile Include="Migrations\202001312134490_PecatRequired.designer.cs">
+      <DependentUpon>202001312134490_PecatRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001312140489_RemoveRequiredPecat.cs" />
+    <Compile Include="Migrations\202001312140489_RemoveRequiredPecat.designer.cs">
+      <DependentUpon>202001312140489_RemoveRequiredPecat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002011705152_AddPunoImeToKontaktOsoba.cs" />
+    <Compile Include="Migrations\202002011705152_AddPunoImeToKontaktOsoba.designer.cs">
+      <DependentUpon>202002011705152_AddPunoImeToKontaktOsoba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002011740182_EmailOznakaTipaPromena.cs" />
+    <Compile Include="Migrations\202002011740182_EmailOznakaTipaPromena.designer.cs">
+      <DependentUpon>202002011740182_EmailOznakaTipaPromena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002011757455_KontaktTelefonOznakaTipaPromena.cs" />
+    <Compile Include="Migrations\202002011757455_KontaktTelefonOznakaTipaPromena.designer.cs">
+      <DependentUpon>202002011757455_KontaktTelefonOznakaTipaPromena.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Email.cs" />
@@ -236,6 +256,8 @@
     <Compile Include="viewModel\PreduzeceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-cosmo.css" />
+    <Content Include="Content\bootstrap-flatty.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -244,6 +266,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\pozadina.jpg" />
+    <Content Include="img\pozadina2.jpg" />
+    <Content Include="img\pozadina3.jpg" />
+    <Content Include="img\rpl.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -318,6 +344,7 @@
     <Content Include="Views\Korisnici\ChangeRolesForm.cshtml" />
     <Content Include="Views\Korisnici\ResetPassword.cshtml" />
     <Content Include="Views\Korisnici\Create.cshtml" />
+    <Content Include="Views\Korisnici\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -362,6 +389,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001272306406_ValidacijaKorisnici.resx">
       <DependentUpon>202001272306406_ValidacijaKorisnici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001312134490_PecatRequired.resx">
+      <DependentUpon>202001312134490_PecatRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001312140489_RemoveRequiredPecat.resx">
+      <DependentUpon>202001312140489_RemoveRequiredPecat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002011705152_AddPunoImeToKontaktOsoba.resx">
+      <DependentUpon>202002011705152_AddPunoImeToKontaktOsoba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002011740182_EmailOznakaTipaPromena.resx">
+      <DependentUpon>202002011740182_EmailOznakaTipaPromena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002011757455_KontaktTelefonOznakaTipaPromena.resx">
+      <DependentUpon>202002011757455_KontaktTelefonOznakaTipaPromena.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

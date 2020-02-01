@@ -22,3 +22,85 @@ select,
 textarea {
     max-width: 280px;
 }
+
+table a:not(.btn), .table a:not(.btn) {
+    text-decoration:none;
+}
+
+th {
+    background-color: #e3f1ff;
+    
+}
+
+.input-validation-error{
+    border-color:red;
+}
+
+.input-validation-error:focus{
+    border-color: red;
+}
+
+textarea {
+    width:280px;
+    height: 250px;
+}
+
+/*td{
+    height: 50px;
+}*/
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: rgba(230, 230, 230,0.4);
+}
+
+/*.table-hover > tbody > tr:hover {
+    background-color: #ecf0f1;
+}*/
+
+.table-hover > tbody > tr:hover {
+    background-color: rgba(213, 241, 245,0.2);
+}
+
+/*div.cntr {
+    position: relative;
+    text-align: center;
+    color: black;
+    /*background-image: url('../img/pozadina.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;*/
+/*}*/
+
+/*div.centered {
+    position: absolute;
+    top: 6vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.centered img {
+        position: absolute;
+        width: 20vw;
+        height: auto;
+        left: 20%;
+        top: 10vw;
+}
+
+div.centered h1 {
+    font-size: 2vw;
+}
+
+div.centered a {
+    position: absolute;
+    /*top: 30vw;*/
+    /*background-color: rgb(33,139,163);
+    border-color: rgb(33,139,163);
+    color: white;
+}*/
+
+/*div.centered a:hover{
+    background-color: rgb(16,105,100);
+    border-color: rgb(15,105,100);
+}*/
+
+

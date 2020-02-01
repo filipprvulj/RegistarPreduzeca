@@ -7,15 +7,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RegistarPreduzecaV11._0.Models
 {
+    public enum OznakaTipaTelefon { Poslovni, Mobilni, Fax}
+    
 	public class KontaktTelefon
 	{
+        
 		public int Id { get; set; }
 
 		[Display(Name = "Tip")]
 		[Required(ErrorMessage = "Morate uneti tip")]
-		[StringLength(25, ErrorMessage = "Možete uneti maksimalno 25 karaktera")]
-		[RegularExpression(@"^[a-zA-Z]+$", ErrorMessage ="Možete uneti samo slova")]
-		public string OznakaTipa { get; set; }
+		//[StringLength(25, ErrorMessage = "Možete uneti maksimalno 25 karaktera")]
+		//[RegularExpression(@"^[a-zA-Z]+$", ErrorMessage ="Možete uneti samo slova")]
+		public OznakaTipaTelefon OznakaTipa { get; set; }
 
 		[Display(Name = "Broj telefona")]
 		[Required(ErrorMessage = "Morate uneti broj telefona")]

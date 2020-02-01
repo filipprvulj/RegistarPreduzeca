@@ -29,7 +29,7 @@ namespace RegistarPreduzecaV11._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Find(id);
+            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Include(o=>o.KontaktOsoba).SingleOrDefault(t=>t.Id == id);
             if (kontaktTelefon == null)
             {
                 return HttpNotFound();
@@ -40,7 +40,7 @@ namespace RegistarPreduzecaV11._0.Controllers
         // GET: KontaktTelefons/Create
         public ActionResult Create()
         {
-            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "Ime");
+            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "PunoIme");
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace RegistarPreduzecaV11._0.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "Ime", kontaktTelefon.KontaktOsobaId);
+            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "PunoIme", kontaktTelefon.KontaktOsobaId);
             return View(kontaktTelefon);
         }
 
@@ -74,7 +74,7 @@ namespace RegistarPreduzecaV11._0.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "Ime", kontaktTelefon.KontaktOsobaId);
+            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "PunoIme", kontaktTelefon.KontaktOsobaId);
             return View(kontaktTelefon);
         }
 
@@ -91,7 +91,7 @@ namespace RegistarPreduzecaV11._0.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "Ime", kontaktTelefon.KontaktOsobaId);
+            ViewBag.KontaktOsobaId = new SelectList(db.KontaktOsobas, "Id", "PunoIme", kontaktTelefon.KontaktOsobaId);
             return View(kontaktTelefon);
         }
 
@@ -103,7 +103,7 @@ namespace RegistarPreduzecaV11._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Find(id);
+            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Include(o => o.KontaktOsoba).SingleOrDefault(o => o.Id == id);
             if (kontaktTelefon == null)
             {
                 return HttpNotFound();
@@ -117,7 +117,7 @@ namespace RegistarPreduzecaV11._0.Controllers
         [Authorize(Roles = RoleName.SaPravomAdministracije)]
         public ActionResult DeleteConfirmed(int id)
         {
-            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Find(id);
+            KontaktTelefon kontaktTelefon = db.KontaktTelefons.Include(o => o.KontaktOsoba).SingleOrDefault(t => t.Id == id);
             db.KontaktTelefons.Remove(kontaktTelefon);
             db.SaveChanges();
             return RedirectToAction("Index");

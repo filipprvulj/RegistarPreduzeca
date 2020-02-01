@@ -32,6 +32,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 			KontaktOsoba kontaktOsoba = db.KontaktOsobas
 					.Include(ko => ko.KontaktTelefoni)
 					.Include(ko => ko.Emailovi)
+					.Include(ko=>ko.Preduzece)
 					.SingleOrDefault(ko => ko.Id == id);
 			if (kontaktOsoba == null)
 			{
@@ -56,6 +57,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+                kontaktOsoba.PunoIme = kontaktOsoba.Ime + " " + kontaktOsoba.Prezime;
 				db.KontaktOsobas.Add(kontaktOsoba);
 				db.SaveChanges();
 				return RedirectToAction("Index");
@@ -106,7 +108,7 @@ namespace RegistarPreduzecaV11._0.Controllers
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
-			KontaktOsoba kontaktOsoba = db.KontaktOsobas.Find(id);
+			KontaktOsoba kontaktOsoba = db.KontaktOsobas.Include(ko=>ko.Preduzece).SingleOrDefault(ko=>ko.Id == id);
 			if (kontaktOsoba == null)
 			{
 				return HttpNotFound();
